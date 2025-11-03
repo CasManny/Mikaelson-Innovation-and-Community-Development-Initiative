@@ -3,6 +3,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { MobileNav } from "@/components/mobile-nav";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 // Types
 interface NavLink {
@@ -31,6 +33,7 @@ const Header: React.FC<HeaderProps> = ({
   ],
   actionButton = { label: "Sponsor a program", href: "/sponsor" },
 }) => {
+  const pathName = usePathname()
   return (
     <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10 md:py-5">
@@ -51,15 +54,21 @@ const Header: React.FC<HeaderProps> = ({
 
         {/* Navigation */}
         <nav className="ml-6 hidden items-center gap-8 whitespace-nowrap text-sm text-gray-700 lg:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="transition-colors hover:text-gray-900"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathName === link.href
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={cn(`group relative p-2 hover:bg-brand-bg-color rounded-t transition-colors hover:text-brand-green-100`,
+                  isActive && "bg-brand-bg-color text-brand-green-100"
+                )}
+              >
+                {link.label}
+                <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-brand-blue transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            );
+          })}
 
           {/* Action Button */}
           {actionButton && (

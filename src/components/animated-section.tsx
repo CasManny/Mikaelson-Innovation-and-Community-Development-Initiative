@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { HeadingClipText } from "@/components/heading-backgroun-clip";
+import { cn } from "@/lib/utils";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -31,6 +32,7 @@ interface AnimatedSectionProps {
   imageSrc?: string;
   imageAlt?: string;
   className?: string;
+  btnBgcolor?: string;
 }
 
 const AnimatedSection: React.FC<AnimatedSectionProps> = ({
@@ -40,6 +42,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   buttonLink,
   imageSrc,
   imageAlt,
+  btnBgcolor,
   className = "",
 }) => {
   return (
@@ -68,12 +71,15 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
       {/* Button (optional) */}
       {buttonText && buttonLink && (
         <motion.div variants={itemVariants}>
-          <Link href={buttonLink} className="no-underline">
+          <Link href={buttonLink}>
             <button
               type="button"
-              className="mikaelson-button community-btn mt-8 inline-flex h-[55px] items-center gap-3 rounded-full bg-gray-900 px-6 text-lg font-semibold text-white shadow hover:bg-black"
+              className={cn(
+                "mt-8 inline-flex cursor-pointer h-[55px] items-center gap-3 rounded-full px-6 text-lg font-semibold text-white shadow",
+                btnBgcolor
+              )}
             >
-              <span className="button-text">{buttonText}</span>
+              <span>{buttonText}</span>
               <span className="button-icon inline-flex h-8 w-8 items-center justify-center">
                 <img src="/icons/arrow.svg" alt="arrow" className="h-4 w-4" />
               </span>

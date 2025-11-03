@@ -150,7 +150,7 @@ export const Footer = () => {
 
         {/* other links */}
         <div className="max-w-5xl mx-auto py-20 border-y">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 md:grid-cols-4">
             {footerLinks.map((section) => (
               <div key={section.section} className="footer-nav nav-section">
                 <h3 className="mb-2 font-extrabold text-lg">
@@ -169,7 +169,7 @@ export const Footer = () => {
                 </nav>
               </div>
             ))}
-            <div className="social-links flex flex-col items-center gap-4">
+            <div className="social-links flex flex-col col-span-2 md:col-span-1 items-center gap-4">
               <h1 className="font-extrabold text-lg">Connect</h1>
               <div className="flex gap-8">
                 {socialLinks.map((item) => (
