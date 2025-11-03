@@ -14,6 +14,7 @@ export default function Home() {
         title="The Mikaelson Community"
         description="The Mikaelson Community is a vibrant network of ambitious students and changemakers across Africa, united by excellence and intentional growth."
         buttonText="Join our community"
+        btnBgcolor="bg-brand-green-100"
         buttonLink="/community"
         imageSrc="/assets/images/Macbook-pro.jpg"
         imageAlt="Mikaelson Community on MacBook"
@@ -24,6 +25,7 @@ export default function Home() {
           with new ideas to solve challenges across Africa."
         buttonText="Contribute to Labs"
         buttonLink="/labs"
+        btnBgcolor="bg-brand-blue"
         imageSrc="/assets/images/Desktop-image.jpg"
         imageAlt="Mikaelson Community on MacBook"
       />
@@ -33,6 +35,7 @@ export default function Home() {
           opportunities to foster collaboration and accelerate growth."
         buttonText="Sponsor a Program"
         buttonLink="/sponsor"
+        btnBgcolor="bg-brand-black"
         imageSrc="/assets/images/iPad Image Presentation.jpg"
         imageAlt="Partnership & Growth Network on iPad"
       />

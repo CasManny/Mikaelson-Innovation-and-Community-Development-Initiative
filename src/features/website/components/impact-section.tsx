@@ -1,4 +1,5 @@
 "use client";
+import { HeadingClipText } from "@/components/heading-backgroun-clip";
 import React, { useMemo, useState, useEffect } from "react";
 
 // Item type
@@ -10,7 +11,7 @@ interface ImpactItem {
 
 // Static items
 const IMPACT_ITEMS: ImpactItem[] = [
-  { icon: "🎓", number: "4", label: "Universities Touched (and counting…)" },
+  { icon: "🏛️", number: "4", label: "Universities Touched (and counting…)" },
   { icon: "👥", number: "3,000+", label: "Students Reached" },
   { icon: "🚀", number: "6", label: "Personal Growth Campaigns Run" },
   {
@@ -18,7 +19,7 @@ const IMPACT_ITEMS: ImpactItem[] = [
     number: "12+",
     label: "Strategic Collaborators and Volunteers",
   },
-  { icon: "🎤", number: "10+", label: "Student Stories Captured" },
+  { icon: "🎙️", number: "10+", label: "Student Stories Captured" },
 ];
 
 // Tab keys
@@ -82,33 +83,28 @@ export default function ImpactSection() {
   const itemsToShow = TABS[activeTab];
 
   return (
-    <section className="impact-section hidden visible px-4 py-16" data-aos="fade-up">
+    <section className="impact-section px-4 py-16" data-aos="fade-up">
       <div className="container mx-auto max-w-[1200px] text-center">
         {/* Section heading */}
-        <button
-          type="button"
-          disabled
-          className="section-title-btn pointer-events-none inline-flex items-center justify-center rounded-full bg-gray-900 px-5 py-2 text-xs font-bold tracking-widest text-white shadow"
-        >
-          OUR IMPACT SO FAR
-        </button>
-
-        {/* Tabs */}
-        <div className="mt-6 inline-flex rounded-full bg-gray-100 p-1 text-sm">
-          {Object.keys(TABS).map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab as TabKey)}
-              aria-pressed={activeTab === tab}
-              className={`rounded-full px-4 py-2 transition-colors ${
-                activeTab === tab
-                  ? "bg-white text-gray-900 shadow"
-                  : "text-gray-600 hover:text-gray-900"
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
+        <div className="flex justify-between items-center px-5">
+          <HeadingClipText className="mb-0" title={"Our Impact so far"} />
+          {/* Tabs */}
+          <div className="hidden md:flex rounded-xl bg-gray-100 p-1 text-sm md:text-xl">
+            {Object.keys(TABS).map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab as TabKey)}
+                aria-pressed={activeTab === tab}
+                className={`rounded-xl px-4 md:py-5 transition-colors cursor-pointer ${
+                  activeTab === tab
+                    ? "bg-white text-gray-900 shadow"
+                    : "text-gray-600 hover:text-gray-900"
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Items */}
@@ -118,8 +114,8 @@ export default function ImpactSection() {
               key={item.label}
               className="impact-item rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="impact-icon-wrapper mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 text-xl">
-                <span className="impact-icon" aria-hidden>
+              <div className="impact-icon-wrapper mx-auto mb-3 flex h-12 w-12 lg:h-20 lg:w-20 items-center justify-center rounded-full bg-gray-100 text-xl">
+                <span className="impact-icon text-2xl lg:text-5xl" aria-hidden>
                   {item.icon}
                 </span>
               </div>
@@ -134,10 +130,10 @@ export default function ImpactSection() {
         </div>
 
         {/* Quote */}
-        <blockquote className="impact-quote mx-auto mt-10 max-w-3xl rounded-2xl border border-gray-200 bg-white p-6 italic text-gray-800">
+        <blockquote className="mx-auto mt-10 max-w-3xl rounded-lg border border-l-brand-bg-color border-l-8 border-gray-200 bg-white p-6 italic text-gray-800 text-lg">
           <p>
-            &apos;The Initiative gave me the structure I needed to finally take my
-            life seriously.&apos;
+            The Initiative gave me the structure I needed to finally take
+            my life seriously.
           </p>
           <footer className="mt-2 not-italic text-sm text-gray-600">
             — A Student, Wesley University

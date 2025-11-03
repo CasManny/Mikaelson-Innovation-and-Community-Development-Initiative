@@ -47,9 +47,9 @@ const linksData: LinkItem[] = [
 
 export const ExploreMore: React.FC = () => {
   return (
-    <section className="links-section hidden visible px-10 py-16" data-aos="fade-up">
+    <section className=" py-16" data-aos="fade-up">
       <div className="container mx-auto max-w-[1200px]">
-        <h2 className="mb-8 text-center text-3xl font-extrabold tracking-tight text-[#111]">
+        <h2 className="section-title text-center">
           Explore More
         </h2>
 

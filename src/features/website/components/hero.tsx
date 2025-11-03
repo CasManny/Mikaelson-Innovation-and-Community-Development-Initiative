@@ -50,8 +50,8 @@ const HomeHero: React.FC = () => {
                 className="h-full w-full rounded-xl"
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/x8nYGAWlLnQ"
-                title="YouTube video"
+                src="https://www.youtube.com/embed/x8nYGAWlLnQ?autoplay=1&mute=1"
+                title="Mikaelson Initiative Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />

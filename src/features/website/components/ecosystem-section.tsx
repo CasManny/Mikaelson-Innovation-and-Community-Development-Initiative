@@ -3,6 +3,28 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 
+const ecosystemItems = [
+  {
+    label: "The Mikaelson Community",
+    href: "/community",
+    bg: "#20c9c0",
+    icon: "/icons/arrow.svg",
+  },
+  {
+    label: "Mikaelson Labs",
+    href: "/labs",
+    bg: "#2563eb",
+    icon: "/icons/arrow.svg",
+    iconBg: "bg-gray-900", // small circle behind icon
+  },
+  {
+    label: "Partnership & Growth Network",
+    href: "/sponsor",
+    bg: "#000000",
+    icon: "/icons/arrow.svg",
+  },
+];
+
 export default function EcosystemSection() {
   return (
     <motion.section
@@ -10,8 +32,9 @@ export default function EcosystemSection() {
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
-      className="visible hidden relative z-[1] mx-auto max-w-[1200px] flex-col items-center justify-center bg-white px-4 pt-4 pb-16"
+      className="relative z-[1] mx-auto max-w-[1200px] flex-col items-center justify-center bg-white px-4 pt-4 pb-16"
     >
+      {/* Header */}
       <motion.div
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -22,6 +45,7 @@ export default function EcosystemSection() {
         <h2 className="mx-auto mb-8 text-center text-[2.3rem] font-extrabold leading-[1.2] tracking-[-0.025em] text-[#111111]">
           A Home for Builders, Believers, and Doers
         </h2>
+
         <button
           type="button"
           disabled
@@ -31,43 +55,32 @@ export default function EcosystemSection() {
         </button>
       </motion.div>
 
+      {/* Ecosystem Buttons */}
       <motion.div
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
         viewport={{ once: true }}
-        className="mikaelson-buttons-container mt-8 flex flex-wrap items-center justify-center gap-6"
+        className="mt-8 flex flex-wrap items-center justify-center gap-6"
       >
-        <Link href="/community" className="no-underline">
-          <button className="mikaelson-button community-btn inline-flex h-[55px] items-center gap-3 rounded-full bg-gray-900 px-5 text-base font-medium text-white shadow-sm hover:bg-black">
-            <span className="button-text">The Mikaelson Community</span>
-            <span className="button-icon inline-flex h-8 w-8 items-center justify-center">
-              <img src="/icons/arrow.svg" alt="arrow" className="h-4 w-4" />
-            </span>
-          </button>
-        </Link>
+        {ecosystemItems.map((item) => (
+          <Link key={item.label} href={item.href} className="px-3">
+            <button
+              style={{ backgroundColor: item.bg }}
+              className={`mikaelson-button inline-flex h-[55px] items-center gap-3 rounded-full px-5 text-base font-medium shadow-sm transition ${item.bg}`}
+            >
+              <span className="text-white text-sm lg:text-xl">{item.label}</span>
 
-        <Link href="/labs" className="no-underline">
-          <button className="mikaelson-button labs-btn inline-flex h-[55px] items-center gap-3 rounded-full border border-gray-300 bg-white px-5 text-base font-medium text-gray-900 shadow-sm hover:bg-gray-50">
-            <span className="button-text">Mikaelson Labs</span>
-            <span className="button-icon labs-arrow-bg inline-flex h-8 w-8 items-center justify-center rounded-full bg-gray-900">
-              <img src="/icons/arrow.svg" alt="arrow" className="h-4 w-4" />
-            </span>
-          </button>
-        </Link>
-
-        <Link href="/sponsor" className="no-underline">
-          <button className="mikaelson-button network-btn inline-flex h-[55px] items-center gap-3 rounded-full bg-gray-100 px-5 text-base font-medium text-gray-900 shadow-sm hover:bg-gray-200">
-            <span className="button-text">Partnership & Growth Network</span>
-            <span className="button-icon inline-flex h-8 w-8 items-center justify-center">
-              <img
-                src="/icons/black-arrow.svg"
-                alt="arrow"
-                className="h-4 w-4"
-              />
-            </span>
-          </button>
-        </Link>
+              <span
+                className={`button-icon inline-flex h-8 w-8 items-center justify-center rounded-full ${
+                  item.iconBg || ""
+                }`}
+              >
+                <img src={item.icon} alt="arrow" className={`h-6 w-6}`} />
+              </span>
+            </button>
+          </Link>
+        ))}
       </motion.div>
     </motion.section>
   );
