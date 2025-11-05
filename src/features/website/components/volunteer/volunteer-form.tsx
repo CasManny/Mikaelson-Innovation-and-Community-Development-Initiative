@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "motion/react";
 
 const VolunteerForm: React.FC = () => (
-  <section className="application-form px-4 py-16">
+  <section className="application-form px-4 py-16" id="start">
     <div className="container mx-auto max-w-3xl">
       <motion.div
         className="form-header text-center"
