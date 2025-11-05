@@ -1,8 +1,9 @@
 import { footerLinks } from "@/constants";
+import { Instagram, Linkedin, Mail, MapPin, Twitter, Youtube } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import ReportsDropdown from "./annual-report";
+// import ReportsDropdown from "./annual-report";
 
 export const socialLinks = [
   {
@@ -11,20 +12,7 @@ export const socialLinks = [
     ariaLabel: "X",
     className: "x-link",
     icon: (
-      <svg
-        viewBox="0 0 1200 1227"
-        width="26"
-        height="26"
-        role="img"
-        aria-hidden="true"
-      >
-        <path
-          fill="currentColor"
-          d="M714.2 519.2 1160.9 0h-105.3L661.6 442.6 377.3 0H0l468.1 681.6L0 1227.1h105.3l418.5-469.7
-          301.3 469.7h377.3L714.2 519.2Zm-148.1 165.4-48.5-70.4L143.3
-          80h171.5l245.2 356.2 48.5 70.4 399.7 580.5H836.7L566.1 684.6Z"
-        ></path>
-      </svg>
+      <Twitter />
     ),
   },
   {
@@ -33,41 +21,7 @@ export const socialLinks = [
     ariaLabel: "Instagram",
     className: "ig-link",
     icon: (
-      <svg
-        viewBox="0 0 448 512"
-        width="26"
-        height="26"
-        role="img"
-        aria-hidden="true"
-      >
-        <defs>
-          <linearGradient id="igGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#f58529"></stop>
-            <stop offset="30%" stopColor="#dd2a7b"></stop>
-            <stop offset="60%" stopColor="#8134af"></stop>
-            <stop offset="100%" stopColor="#515bd4"></stop>
-          </linearGradient>
-        </defs>
-        <rect
-          x="32"
-          y="32"
-          width="384"
-          height="384"
-          rx="96"
-          ry="96"
-          fill="url(#igGradient)"
-        ></rect>
-        <circle
-          cx="224"
-          cy="224"
-          r="110"
-          fill="none"
-          stroke="#fff"
-          strokeWidth="32"
-        ></circle>
-        <circle cx="224" cy="224" r="60" fill="#fff"></circle>
-        <circle cx="320" cy="128" r="28" fill="#fff"></circle>
-      </svg>
+      <Instagram />
     ),
   },
   {
@@ -76,25 +30,7 @@ export const socialLinks = [
     ariaLabel: "LinkedIn",
     className: "li-link",
     icon: (
-      <svg
-        viewBox="0 0 448 512"
-        width="26"
-        height="26"
-        role="img"
-        aria-hidden="true"
-      >
-        <path
-          fill="#0A66C2"
-          d="M100.28 448H7.4V149.9h92.88V448zM53.79 108.1C24.09
-          108.1 0 83.5 0 53.8 0 24.5 23.49 0 53.49
-          0s53.8 24.5 53.8 53.8c.3 29.7-23.2
-          54.3-53.5 54.3zM447.9
-          448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3
-          0-55.7 37.7-55.7 76.7V448h-92.8V149.9h89.1v40.7h1.3c12.4-23.4
-          42.6-48.3 87.6-48.3 93.6 0 110.8
-          61.6 110.8 141.7V448z"
-        ></path>
-      </svg>
+      <Linkedin />
     ),
   },
   {
@@ -103,27 +39,7 @@ export const socialLinks = [
     ariaLabel: "YouTube",
     className: "yt-link",
     icon: (
-      <svg
-        viewBox="0 0 576 512"
-        width="26"
-        height="26"
-        role="img"
-        aria-hidden="true"
-      >
-        <path
-          fill="#FF0000"
-          d="M549.7 124.1c-6.3-23.7-24.9-42.3-48.6-48.6C458.8 64
-          288 64 288 64S117.2 64 74.9
-          75.5c-23.7 6.3-42.3 24.9-48.6
-          48.6C14 166.4 14 256 14
-          256s0 89.6 12.3 131.9c6.3 23.7 24.9
-          41.5 48.6 47.8C117.2 448 288 448 288
-          448s170.8 0 212.1-12.3c23.7-6.3
-          42.3-24.1 48.6-47.8C562
-          345.6 562 256 562 256s0-89.6-12.3-131.9z"
-        ></path>
-        <path fill="#FFF" d="M232 338V174l142 82-142 82z"></path>
-      </svg>
+      <Youtube />
     ),
   },
 ];
@@ -132,7 +48,7 @@ export const Footer = () => {
   return (
     <footer className="pt-10 mt-5 pb-5 px-5 border-t">
       <div className="max-w-7xl mx-auto">
-        {/* header  */}
+        {/* header 
         <div className="w-full max-w-sm py-10 mx-auto space-y-4 text-center">
           <div className="flex items-center gap-2">
             <Image
@@ -146,11 +62,37 @@ export const Footer = () => {
           <p className="">
             Elevating humanity through technology and community.
           </p>
-        </div>
+        </div> */}
 
         {/* other links */}
-        <div className="max-w-5xl mx-auto py-20 border-y">
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 md:grid-cols-4">
+        <div className="mx-auto py-20">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 md:flex md:place-content-center">
+            <div className="footer-nav nav-section">
+              <div className="max-w-80 flex flex-col gap-2">
+                <div className="flex md:items-center gap-2 flex-col md:flex-row items-start">
+                  <Image
+                    src="/assets/images/mikaelsonlogo.png"
+                    alt="mikaelinitiativelogo"
+                    width={50}
+                    height={50}
+                  />
+                  <h1 className="font-extrabold text-xl">Mikaelson Initiative</h1>
+                </div>
+                <p className="text-sm">
+                  Elevating humanity through technology and community.
+                </p>
+                <div className="flex flex-row md:flex-col gap-2">
+                  <a href="mailto:mikaelsoninitiative@gmail.com" className="flex flex-row items-center gap-2 hover:text-blue-400">
+                    <Mail className="text-2xl" />
+                    <span className="text-sm hidden md:flex">mikaelsoninitiative@gmail.com</span>
+                  </a>
+                  <a href="https://www.google.com/maps" className="flex flex-row items-center gap-2 hover:text-blue-400">
+                    <MapPin className="text-2xl" />
+                    <span className="text-sm hidden md:flex">Location here</span>
+                  </a>
+                </div>
+              </div>
+            </div>
             {footerLinks.map((section) => (
               <div key={section.section} className="footer-nav nav-section">
                 <h3 className="mb-2 font-extrabold text-lg">
@@ -170,27 +112,30 @@ export const Footer = () => {
               </div>
             ))}
             <div className="social-links flex flex-col col-span-2 md:col-span-1 items-center gap-4">
-              <h1 className="font-extrabold text-lg">Connect</h1>
-              <div className="flex gap-8">
+              <h1 className="font-extrabold text-lg">Connect With Us</h1>
+              <div className="flex gap-4">
                 {socialLinks.map((item) => (
                   <a
                     key={item.href}
-                    href={item.href}
                     target="_blank"
                     rel="noreferrer"
                     title={item.label}
                     aria-label={item.ariaLabel}
-                    className={`${item.className} hover:opacity-80 transition`}
+                    href={item.href}
+                    className={`${item.className} hover:opacity-80 transition text-2xl`}
                   >
-                    {item.icon}
+                    <div className="bg-brand-bg-color p-4 rounded-full">
+                      {item.icon}
+                    </div>
                   </a>
                 ))}
               </div>
-              <ReportsDropdown />
+              {/* <ReportsDropdown /> */}
             </div>
           </div>
         </div>
       </div>
+      <hr />
       <p className="text-center mt-5">
         © 2025 Mikaelson Initiative. All rights reserved.
       </p>
