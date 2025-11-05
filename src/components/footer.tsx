@@ -69,7 +69,7 @@ export const Footer = () => {
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 md:flex md:place-content-center">
             <div className="footer-nav nav-section">
               <div className="max-w-80 flex flex-col gap-2">
-                <div className="flex items-center gap-2">
+                <div className="flex md:items-center gap-2 flex-col md:flex-row items-start">
                   <Image
                     src="/assets/images/mikaelsonlogo.png"
                     alt="mikaelinitiativelogo"
@@ -81,14 +81,14 @@ export const Footer = () => {
                 <p className="text-sm">
                   Elevating humanity through technology and community.
                 </p>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-row md:flex-col gap-2">
                   <a href="mailto:mikaelsoninitiative@gmail.com" className="flex flex-row items-center gap-2 hover:text-blue-400">
                     <Mail className="text-2xl" />
-                    <span className="text-sm">mikaelsoninitiative@gmail.com</span>
+                    <span className="text-sm hidden md:flex">mikaelsoninitiative@gmail.com</span>
                   </a>
-                  <a href="mailto:mikaelsoninitiative@gmail.com" className="flex flex-row items-center gap-2 hover:text-blue-400">
+                  <a href="https://www.google.com/maps" className="flex flex-row items-center gap-2 hover:text-blue-400">
                     <MapPin className="text-2xl" />
-                    <span className="text-sm">Location here</span>
+                    <span className="text-sm hidden md:flex">Location here</span>
                   </a>
                 </div>
               </div>
