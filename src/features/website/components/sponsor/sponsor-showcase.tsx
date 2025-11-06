@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 
 export const SponsorsShowcase: React.FC = () => {
@@ -42,21 +43,25 @@ export const SponsorsShowcase: React.FC = () => {
           }}
         >
           {Array.from({ length: 10 }).map((_, i) => (
-            <img
+            <Image
               key={`sponsor-${i}`}
               src="/assets/images/brand-1.svg"
               alt={`Sponsor ${i + 1}`}
+              width={40}
+              height={40}
               className="rounded-full"
-              style={{ height: 40, flexShrink: 0 }}
+              style={{ flexShrink: 0 }}
             />
           ))}
           {Array.from({ length: 10 }).map((_, i) => (
-            <img
+            <Image
               key={`sponsor-dup-${i}`}
               src="/assets/images/brand-1.svg"
               alt={`Sponsor ${i + 1} Duplicate`}
               className="rounded-full"
-              style={{ height: 40, flexShrink: 0 }}
+              width={40}
+              height={40}
+              style={{flexShrink: 0 }}
             />
           ))}
         </div>

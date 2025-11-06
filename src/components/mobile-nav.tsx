@@ -1,10 +1,11 @@
 "use client";
 import {
-    Sheet,
-    SheetContent,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import Link from "next/link";
@@ -19,12 +20,6 @@ interface NavLink {
 interface ActionButton {
   label: string;
   href: string;
-}
-
-interface HeaderProps {
-  brandName?: string;
-  navLinks?: NavLink[];
-  actionButton?: ActionButton;
 }
 
 interface MobileNavProps {
@@ -42,9 +37,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
     <div className="lg:hidden">
       <Sheet>
         <SheetTrigger asChild>
-          <button aria-label="Open menu">
-            <Menu className="h-8 w-8" />
-          </button>
+          <Menu className="h-8 w-8" />
         </SheetTrigger>
         <SheetContent side="right" className="w-64 sm:w-80">
           <SheetHeader>
@@ -52,13 +45,14 @@ export const MobileNav: React.FC<MobileNavProps> = ({
           </SheetHeader>
           <div className="mt-6 px-5 flex flex-col gap-6 text-gray-700">
             {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-base transition-colors hover:text-gray-900"
-              >
-                {link.label}
-              </Link>
+              <SheetClose asChild key={link.label}>
+                <Link
+                  href={link.href}
+                  className="text-base transition-colors hover:text-gray-900"
+                >
+                  {link.label}
+                </Link>
+              </SheetClose>
             ))}
 
             {actionButton && (

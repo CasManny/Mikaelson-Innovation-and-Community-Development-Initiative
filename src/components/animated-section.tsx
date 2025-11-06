@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { HeadingClipText } from "@/components/heading-backgroun-clip";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -81,7 +82,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
             >
               <span>{buttonText}</span>
               <span className="button-icon inline-flex h-8 w-8 items-center justify-center">
-                <img src="/icons/arrow.svg" alt="arrow" className="h-4 w-4" />
+                <Image width={20} height={20} src="/icons/arrow.svg" alt="arrow" className="h-4 w-4" />
               </span>
             </button>
           </Link>
@@ -94,7 +95,9 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
           variants={itemVariants}
           className="mx-auto mt-8 text-center"
         >
-          <img
+          <Image
+            width={1200}
+            height={700}
             src={imageSrc}
             alt={imageAlt || title}
             className="floating-image mx-auto max-w-[80%] rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.1)]"

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 const LabsHeroSection: React.FC = () => {
   return (
@@ -77,7 +78,9 @@ const LabsHeroSection: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <img
+              <Image
+                width={500}
+                height={500}
                 src="/assets/images/hero-img.jpg"
                 alt="Innovation Lab"
                 className="rounded-2xl shadow-lg object-cover w-full h-[400px] lg:h-[500px]"

@@ -1,16 +1,13 @@
 "use client";
-import React, { useMemo, useState } from "react";
-import { motion } from "motion/react";
-import { FILTERS, FilterType, TEAM_MEMBERS, TeamMember } from "@/constants";
 import {
   Dialog,
   DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-  DialogTrigger,
+  DialogTrigger
 } from "@/components/ui/dialog";
+import { FILTERS, FilterType, TEAM_MEMBERS, TeamMember } from "@/constants";
+import { motion } from "motion/react";
 import Image from "next/image";
+import React, { useMemo, useState } from "react";
 
 const TeamSection: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<FilterType>("ALL");
@@ -27,7 +24,7 @@ const TeamSection: React.FC = () => {
         member.role.toLowerCase().includes(search.toLowerCase());
       return matchesFilter && matchesSearch;
     });
-  }, [TEAM_MEMBERS, activeFilter, search]);
+  }, [activeFilter, search]);
 
   return (
     <div>
