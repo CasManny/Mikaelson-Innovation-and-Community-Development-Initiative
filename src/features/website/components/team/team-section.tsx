@@ -2,8 +2,12 @@
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
   DialogTrigger
 } from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { FILTERS, FilterType, TEAM_MEMBERS, TeamMember } from "@/constants";
 import { motion } from "motion/react";
 import Image from "next/image";
@@ -114,11 +118,11 @@ const TeamSection: React.FC = () => {
                       backgroundPosition: "center",
                     }}
                   >
-                    <div className="absolute bottom-0 left-0 right-0 m-4 rounded bg-white/90 p-3 text-center">
-                      <h4 className="text-base font-semibold text-gray-700 sm:text-lg">
+                    <div className="absolute bottom-0 left-0 right-0 m-1 rounded bg-white/90 p-1 text-center">
+                      <h4 className="text-base font-semibold  text-gray-700 sm:text-lg">
                         {member.name}
                       </h4>
-                      <p className="mt-1 text-sm text-gray-500 sm:text-base">
+                      <p className="text-sm text-gray-500 sm:text-base">
                         {member.role}
                       </p>
                     </div>
@@ -127,23 +131,37 @@ const TeamSection: React.FC = () => {
 
                 {selectedMember && (
                   <DialogContent className="max-w-md">
-                    <div className="space-y-4 text-center h-50 w-full flex items-center justify-center">
-                      <Image
-                        src={selectedMember.img}
-                        alt={selectedMember.name}
-                        width={40}
-                        height={40}
-                        className="h-40 w-40 rounded-full object-cover mx-auto border"
-                      />
-                    </div>
-                    <div className="text-black text-center">
-                      <h3 className="font-semibold text-2xl">{selectedMember.name}</h3>
-                      <p className="text-lg">{selectedMember.role}</p>
-                    </div>
-                    <div className="bg-[#f8fafc] p-5 space-y-3">
-                      <h3 className="text-xl text-black font-semibold">About</h3>
-                      <p>{selectedMember.bio}</p>
-                    </div>
+                    <DialogHeader className="sr-only">
+                      <DialogTitle>What you need to know</DialogTitle>
+                      <DialogDescription>
+                        Get know {selectedMember.name}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <ScrollArea className="max-h-[80vh] p-6">
+                      <div className="space-y-4 text-center flex items-center justify-center">
+                        <Image
+                          src={selectedMember.img}
+                          alt={selectedMember.name}
+                          width={160}
+                          height={160}
+                          className="h-40 w-40 rounded-full object-cover mx-auto border"
+                        />
+                      </div>
+
+                      <div className="text-black text-center mt-4">
+                        <h3 className="font-semibold text-2xl">
+                          {selectedMember.name}
+                        </h3>
+                        <p className="text-lg">{selectedMember.role}</p>
+                      </div>
+
+                      <div className="bg-[#f8fafc] p-5 space-y-3 mt-4 rounded-lg">
+                        <h3 className="text-xl text-black font-semibold">
+                          About
+                        </h3>
+                        <p>{selectedMember.bio}</p>
+                      </div>
+                    </ScrollArea>
                   </DialogContent>
                 )}
               </Dialog>
