@@ -114,7 +114,7 @@ export default function ImpactSection() {
               key={item.label}
               className="impact-item rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="impact-icon-wrapper mx-auto mb-3 flex h-12 w-12 lg:h-20 lg:w-20 items-center justify-center rounded-full bg-gray-100 text-xl">
+              <div className="impact-icon-wrapper hidden mx-auto mb-3 h-12 w-12 lg:h-20 lg:w-20 items-center justify-center rounded-full bg-gray-100 text-xl">
                 <span className="impact-icon text-2xl lg:text-5xl" aria-hidden>
                   {item.icon}
                 </span>
