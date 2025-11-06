@@ -1,7 +1,25 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import { WireTransferDialog } from "./transfer-wire-modal";
+import CompanyPaymentOptionsDialog from "./company-payment";
 
 export const SponsorHeader: React.FC = () => {
+  const [openWireTransfer, setOpenWireTransfer] = useState(false);
+  const [openPaymentMethod, setOpenPaymentMethod] = useState(false);
+  const handleOpenWireTransfer = () => {
+    setOpenWireTransfer(true);
+    handleClosePaymentMethod();
+  };
+  const handleCloseWireTransfer = () => {
+    setOpenWireTransfer(false);
+  };
+
+  const handleOpenPaymentMethod = () => {
+    setOpenPaymentMethod(true);
+  };
+  const handleClosePaymentMethod = () => {
+    setOpenPaymentMethod(false);
+  };
   return (
     <section
       className="sponsor-header"
@@ -39,6 +57,7 @@ export const SponsorHeader: React.FC = () => {
         }}
       >
         <button
+          onClick={handleOpenPaymentMethod}
           style={{
             background: "rgb(37, 99, 235)",
             color: "white",
@@ -53,6 +72,7 @@ export const SponsorHeader: React.FC = () => {
           As an Individual
         </button>
         <button
+          onClick={handleOpenPaymentMethod}
           style={{
             background: "rgb(31, 41, 55)",
             color: "white",
@@ -67,6 +87,15 @@ export const SponsorHeader: React.FC = () => {
           As a Company/Organization
         </button>
       </div>
+      <WireTransferDialog
+        open={openWireTransfer}
+        onClose={handleCloseWireTransfer}
+      />
+      <CompanyPaymentOptionsDialog
+        onWireTransfer={handleOpenWireTransfer}
+        open={openPaymentMethod}
+        onClose={handleClosePaymentMethod}
+      />
     </section>
   );
 };

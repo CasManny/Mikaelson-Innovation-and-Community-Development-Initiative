@@ -1,7 +1,9 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const JoinTeam: React.FC = () => {
+  const router = useRouter()
   return (
     <section
       className="join-team"
@@ -41,6 +43,7 @@ const JoinTeam: React.FC = () => {
 
         <button
           type="button"
+          onClick={() => router.push("/volunteer")}
           style={{
             background: "rgb(59,130,246)",
             color: "white",

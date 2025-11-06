@@ -46,7 +46,7 @@ export const AboutHeader: React.FC = () => (
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      About the Mikaelson Initiative
+      Mikaelson Community Development and Tech Initiative
     </motion.h1>
     <motion.p
       className="mb-12 text-lg text-gray-600 md:text-xl"
@@ -55,8 +55,7 @@ export const AboutHeader: React.FC = () => (
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: 0.2 }}
     >
-      We&apos;re building Africa's future - one student, one idea, one action at
-      a time.
+      Our name is changing and make it change in every part of about us.
     </motion.p>
 
     <motion.div
