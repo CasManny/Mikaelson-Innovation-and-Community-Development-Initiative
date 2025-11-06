@@ -21,8 +21,8 @@ export const SponsorsShowcase: React.FC = () => {
         }}
       >
         <h2
+          className="text-xl md:text-[1.5rem]"
           style={{
-            fontSize: "2rem",
             fontWeight: 700,
             margin: 0,
             color: "#111",

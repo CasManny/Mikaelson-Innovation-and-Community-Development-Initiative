@@ -11,10 +11,11 @@ export const HowToPartner: React.FC = () => {
         textAlign: "center",
       }}
     >
-      <h2 style={{ fontSize: "2rem", fontWeight: 700, marginBottom: "1rem" }}>
+      <h2 className="text-2xl md:text-[2rem] font-bold mb-2 md:mb-3">
         How to Partner with Us
       </h2>
       <ol
+        className="space-y-2"
         style={{
           maxWidth: 800,
           margin: "0 auto",
@@ -23,17 +24,21 @@ export const HowToPartner: React.FC = () => {
           lineHeight: 1.6,
         }}
       >
-        <li>
+        <li className=" text-base md:text-lg">
           Contact us at{" "}
           <a href="mailto:community@mikaelsoninitiative.org">
             community@mikaelsoninitiative.org
           </a>
         </li>
-        <li>
+        <li className=" text-sm md:text-lg">
           Discuss partnership opportunities tailored to your organization.
         </li>
-        <li>Select a partnership package and sign the agreement.</li>
-        <li>Collaborate on programs and monitor impact together.</li>
+        <li className=" text-sm md:text-lg">
+          Select a partnership package and sign the agreement.
+        </li>
+        <li className=" text-sm md:text-lg">
+          Collaborate on programs and monitor impact together.
+        </li>
       </ol>
     </section>
   );
