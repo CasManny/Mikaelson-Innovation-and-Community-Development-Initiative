@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({
           {actionButton && (
             <Link
               href={actionButton.href}
-              className="ml-6 inline-flex items-center rounded-xl bg-gray-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-black"
+              className="ml-6 inline-flex pl-1 items-center rounded-xl bg-gray-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-black"
             >
               {actionButton.label}
               <svg
