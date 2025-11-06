@@ -63,7 +63,7 @@ export default function EcosystemSection() {
           <Link key={item.label} href={item.href} className="px-3">
             <button
               style={{ backgroundColor: item.bg }}
-              className={`mikaelson-button inline-flex h-[55px] items-center gap-3 rounded-full px-5 text-base font-medium shadow-sm transition ${item.bg}`}
+              className={`mikaelson-button cursor-pointer inline-flex h-[55px] items-center gap-3 rounded-full px-5 text-base font-medium shadow-sm transition ${item.bg}`}
             >
               <span className="text-white text-sm lg:text-xl">
                 {item.label}
