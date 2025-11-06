@@ -44,12 +44,8 @@ export default function EcosystemSection() {
         className="w-full text-center"
       >
         <h2 className="mx-auto mb-2 text-center text-[2.3rem] font-extrabold leading-[1.2] tracking-[-0.025em] text-[#111111]">
-          A Home for Builders, Believers, and Doers
-        </h2>
-
-        <h1 className="text-[1.25rem] font-bold text-black">
           Our Ecosystem
-        </h1>
+        </h2>
       </motion.div>
 
       {/* Ecosystem Buttons */}
@@ -75,7 +71,13 @@ export default function EcosystemSection() {
                   item.iconBg || ""
                 }`}
               >
-                <Image width={30} height={30} src={item.icon} alt="arrow" className={`h-6 w-6}`} />
+                <Image
+                  width={30}
+                  height={30}
+                  src={item.icon}
+                  alt="arrow"
+                  className={`h-6 w-6}`}
+                />
               </span>
             </button>
           </Link>

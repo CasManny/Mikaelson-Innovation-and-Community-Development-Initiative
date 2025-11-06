@@ -1,6 +1,6 @@
-import React from "react";
+import { BookOpen, LucideIcon, Trophy } from "lucide-react";
 import Link from "next/link";
-import { Newspaper, Trophy, BookOpen, LucideIcon } from "lucide-react";
+import React from "react";
 
 interface LinkItem {
   id: number;
@@ -13,16 +13,16 @@ interface LinkItem {
 }
 
 const linksData: LinkItem[] = [
-  {
-    id: 1,
-    icon: Newspaper,
-    title: "Blog & Newsletter",
-    description:
-      "Stay updated with productivity tips, success stories, and community news from our members.",
-    href: "#",
-    buttonLabel: "Read Latest Posts",
-    isInternal: false,
-  },
+  // {
+  //   id: 1,
+  //   icon: Newspaper,
+  //   title: "Blog & Newsletter",
+  //   description:
+  //     "Stay updated with productivity tips, success stories, and community news from our members.",
+  //   href: "#",
+  //   buttonLabel: "Read Latest Posts",
+  //   isInternal: false,
+  // },
   {
     id: 2,
     icon: Trophy,
@@ -53,7 +53,7 @@ export const ExploreMore: React.FC = () => {
           Explore More
         </h2>
 
-        <div className="links-grid grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="links-grid grid grid-cols-1 gap-6 md:grid-cols-2">
           {linksData.map((link) => {
             const Icon = link.icon;
             return (

@@ -47,8 +47,8 @@ export const SponsorsShowcase: React.FC = () => {
               key={`sponsor-${i}`}
               src="/assets/images/brand-1.svg"
               alt={`Sponsor ${i + 1}`}
-              width={40}
-              height={40}
+              width={80}
+              height={80}
               className="rounded-full"
               style={{ flexShrink: 0 }}
             />
@@ -59,8 +59,8 @@ export const SponsorsShowcase: React.FC = () => {
               src="/assets/images/brand-1.svg"
               alt={`Sponsor ${i + 1} Duplicate`}
               className="rounded-full"
-              width={40}
-              height={40}
+              width={80}
+              height={80}
               style={{flexShrink: 0 }}
             />
           ))}
