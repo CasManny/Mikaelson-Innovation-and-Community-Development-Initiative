@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState, useMemo } from "react";
 
 type Project = {
@@ -11,66 +12,67 @@ type Project = {
   tags: string[];
   link?: string;
 };
+const projects: Project[] = [
+  {
+    id: 1,
+    title: "OpenTutor AI",
+    category: "education",
+    description: "Connecting students with mentors across Nigeria",
+    image: "/assets/images/project1.jpg",
+    status: "active",
+    tags: ["Vue", "Node", "MongoDB"],
+  },
+  {
+    id: 2,
+    title: "HealthTech Initiative",
+    category: "healthcare",
+    description: "Telemedicine platform for rural communities",
+    image: "/assets/images/project2.jpg",
+    status: "completed",
+    tags: ["React", "Python", "PostgreSQL"],
+  },
+  {
+    id: 3,
+    title: "Smart Agriculture",
+    category: "agriculture",
+    description: "IoT solutions for modern farming",
+    image: "/assets/images/project3.jpg",
+    status: "development",
+    tags: ["IoT", "ML", "Sensors"],
+  },
+  {
+    id: 4,
+    title: "PropertyInsight",
+    category: "real-estate",
+    description:
+      "Data-driven platform optimizing property valuation and urban planning.",
+    image: "/assets/images/project4.jpg",
+    status: "active",
+    tags: ["Analytics", "GIS", "Vue"],
+  },
+  {
+    id: 5,
+    title: "RentalHub NG",
+    category: "real-estate",
+    description:
+      "Platform simplifying rental property discovery, verification and tenant landlord management across Nigerian cities.",
+    image: "/assets/images/Rental hub.jpeg",
+    status: "development",
+    tags: ["Vue", "Express", "GIS"],
+    link: "https://rentalhub.ng",
+  },
+];
+
+ const filters = [
+   "All",
+   "education",
+   "healthcare",
+   "agriculture",
+   "real-estate",
+ ];
 
 const LabsFeaturedProjects: React.FC = () => {
-  const projects: Project[] = [
-    {
-      id: 1,
-      title: "OpenTutor AI",
-      category: "education",
-      description: "Connecting students with mentors across Nigeria",
-      image: "/assets/images/project1.jpg",
-      status: "active",
-      tags: ["Vue", "Node", "MongoDB"],
-    },
-    {
-      id: 2,
-      title: "HealthTech Initiative",
-      category: "healthcare",
-      description: "Telemedicine platform for rural communities",
-      image: "/assets/images/project2.jpg",
-      status: "completed",
-      tags: ["React", "Python", "PostgreSQL"],
-    },
-    {
-      id: 3,
-      title: "Smart Agriculture",
-      category: "agriculture",
-      description: "IoT solutions for modern farming",
-      image: "/assets/images/project3.jpg",
-      status: "development",
-      tags: ["IoT", "ML", "Sensors"],
-    },
-    {
-      id: 4,
-      title: "PropertyInsight",
-      category: "real-estate",
-      description:
-        "Data-driven platform optimizing property valuation and urban planning.",
-      image: "/assets/images/project4.jpg",
-      status: "active",
-      tags: ["Analytics", "GIS", "Vue"],
-    },
-    {
-      id: 5,
-      title: "RentalHub NG",
-      category: "real-estate",
-      description:
-        "Platform simplifying rental property discovery, verification and tenant landlord management across Nigerian cities.",
-      image: "/assets/images/Rental hub.jpeg",
-      status: "development",
-      tags: ["Vue", "Express", "GIS"],
-      link: "https://rentalhub.ng",
-    },
-  ];
-
-  const filters = [
-    "All",
-    "education",
-    "healthcare",
-    "agriculture",
-    "real-estate",
-  ];
+ 
 
   const [activeFilter, setActiveFilter] = useState<string>("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -78,7 +80,7 @@ const LabsFeaturedProjects: React.FC = () => {
   const filteredProjects = useMemo(() => {
     if (activeFilter === "All") return projects;
     return projects.filter((project) => project.category === activeFilter);
-  }, [activeFilter, projects]);
+  }, [activeFilter]);
 
   return (
     <section id="projects" className="py-20 bg-white">
@@ -121,9 +123,11 @@ const LabsFeaturedProjects: React.FC = () => {
             >
               {/* Image */}
               <div className="relative">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
+                  height={280}
+                  width={280}
                   className="w-full h-56 object-cover"
                 />
                 <span
@@ -191,7 +195,9 @@ const LabsFeaturedProjects: React.FC = () => {
                 <h2 className="text-2xl font-bold text-gray-900">
                   {selectedProject.title}
                 </h2>
-                <img
+                <Image
+                  width={320}
+                  height={400}
                   src={selectedProject.image}
                   alt={selectedProject.title}
                   className="w-full h-64 object-cover rounded-lg"

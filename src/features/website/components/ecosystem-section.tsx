@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 const ecosystemItems = [
   {
@@ -74,7 +75,7 @@ export default function EcosystemSection() {
                   item.iconBg || ""
                 }`}
               >
-                <img src={item.icon} alt="arrow" className={`h-6 w-6}`} />
+                <Image width={30} height={30} src={item.icon} alt="arrow" className={`h-6 w-6}`} />
               </span>
             </button>
           </Link>

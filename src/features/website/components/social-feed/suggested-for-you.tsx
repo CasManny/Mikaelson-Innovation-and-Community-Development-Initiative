@@ -1,7 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Lightbulb } from "lucide-react";
-import React from "react";
 
 const data = [
   {
