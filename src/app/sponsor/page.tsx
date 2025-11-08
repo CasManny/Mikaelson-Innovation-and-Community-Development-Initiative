@@ -6,7 +6,7 @@ import React from 'react'
 
 const SponsorPage = () => {
   return (
-    <div>
+    <div className='p-5'>
       <SponsorHeader />
       <SponsorshipOptions />
       <HowToPartner />

@@ -5,11 +5,6 @@ import { Users, Flame, ArrowRight, LogIn, User } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
-interface LiveStats {
-  activeMembers: number;
-  totalStreaks: number;
-  countriesReached: number;
-}
 
 const formatNumber = (num: number): string => num.toLocaleString();
 

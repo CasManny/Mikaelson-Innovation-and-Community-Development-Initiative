@@ -1,7 +1,25 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import { WireTransferDialog } from "./transfer-wire-modal";
+import CompanyPaymentOptionsDialog from "./company-payment";
 
 export const SponsorHeader: React.FC = () => {
+  const [openWireTransfer, setOpenWireTransfer] = useState(false);
+  const [openPaymentMethod, setOpenPaymentMethod] = useState(false);
+  const handleOpenWireTransfer = () => {
+    setOpenWireTransfer(true);
+    handleClosePaymentMethod();
+  };
+  const handleCloseWireTransfer = () => {
+    setOpenWireTransfer(false);
+  };
+
+  const handleOpenPaymentMethod = () => {
+    setOpenPaymentMethod(true);
+  };
+  const handleClosePaymentMethod = () => {
+    setOpenPaymentMethod(false);
+  };
   return (
     <section
       className="sponsor-header"
@@ -14,14 +32,16 @@ export const SponsorHeader: React.FC = () => {
         margin: "0 auto",
       }}
     >
-      <h1 style={{ fontSize: "3rem", fontWeight: 800, color: "rgb(17,17,17)" }}>
+      <h1
+        className="text-2xl md:text-[3rem]"
+        style={{ fontWeight: 800, color: "rgb(17,17,17)" }}
+      >
         Sponsor and Support Our Initiative
       </h1>
       <p
+        className="text-base md:text-[1.2rem] w-full  lg:max-w-[800px]"
         style={{
-          fontSize: "1.2rem",
           color: "rgb(85,85,85)",
-          maxWidth: 800,
           margin: "1rem auto",
         }}
       >
@@ -39,34 +59,37 @@ export const SponsorHeader: React.FC = () => {
         }}
       >
         <button
+          onClick={handleOpenPaymentMethod}
+          className="text-sm md:text-[1.1rem] font-semibold cursor-pointer border-none rounded-[2rem]"
           style={{
             background: "rgb(37, 99, 235)",
             color: "white",
             padding: "1rem 2rem",
-            borderRadius: "2rem",
-            border: "none",
-            fontWeight: 600,
-            cursor: "pointer",
-            fontSize: "1.1rem",
           }}
         >
           As an Individual
         </button>
         <button
+          onClick={handleOpenPaymentMethod}
+          className="text-sm md:text-[1.1rem] font-semibold cursor-pointer border-none rounded-[2rem]"
           style={{
             background: "rgb(31, 41, 55)",
             color: "white",
             padding: "1rem 2rem",
-            borderRadius: "2rem",
-            border: "none",
-            fontWeight: 600,
-            cursor: "pointer",
-            fontSize: "1.1rem",
           }}
         >
           As a Company/Organization
         </button>
       </div>
+      <WireTransferDialog
+        open={openWireTransfer}
+        onClose={handleCloseWireTransfer}
+      />
+      <CompanyPaymentOptionsDialog
+        onWireTransfer={handleOpenWireTransfer}
+        open={openPaymentMethod}
+        onClose={handleClosePaymentMethod}
+      />
     </section>
   );
 };
