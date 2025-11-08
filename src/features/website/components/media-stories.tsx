@@ -1,6 +1,7 @@
 "use client";
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 // Media item types
 type MediaType = "video" | "image" | "audio" | "story";
@@ -187,7 +188,9 @@ function Card({ item }: CardProps) {
             />
           </div>
         ) : item.type === "image" ? (
-          <img
+          <Image
+            width={50}
+            height={50}
             src={item.imageSrc}
             alt={item.title}
             className="h-auto w-full object-cover"

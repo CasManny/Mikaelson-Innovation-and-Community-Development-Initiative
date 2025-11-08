@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 const ecosystemItems = [
   {
@@ -42,17 +43,9 @@ export default function EcosystemSection() {
         viewport={{ once: true }}
         className="w-full text-center"
       >
-        <h2 className="mx-auto mb-8 text-center text-[2.3rem] font-extrabold leading-[1.2] tracking-[-0.025em] text-[#111111]">
-          A Home for Builders, Believers, and Doers
-        </h2>
-
-        <button
-          type="button"
-          disabled
-          className="pointer-events-none inline-flex h-[60px] w-[260px] cursor-default items-center justify-center rounded-[2.5rem] bg-gray-800 px-6 text-[1.25rem] font-bold tracking-[1px] text-white shadow-[0_4px_20px_rgba(0,0,0,0.1)]"
-        >
+        <h2 className="mx-auto mb-2 text-center text-[2.3rem] font-extrabold leading-[1.2] tracking-[-0.025em] text-[#111111]">
           Our Ecosystem
-        </button>
+        </h2>
       </motion.div>
 
       {/* Ecosystem Buttons */}
@@ -69,14 +62,22 @@ export default function EcosystemSection() {
               style={{ backgroundColor: item.bg }}
               className={`mikaelson-button cursor-pointer inline-flex h-[55px] items-center gap-3 rounded-full px-5 text-base font-medium shadow-sm transition ${item.bg}`}
             >
-              <span className="text-white text-sm lg:text-xl">{item.label}</span>
+              <span className="text-white text-sm lg:text-xl">
+                {item.label}
+              </span>
 
               <span
                 className={`button-icon inline-flex h-8 w-8 items-center justify-center rounded-full ${
                   item.iconBg || ""
                 }`}
               >
-                <img src={item.icon} alt="arrow" className={`h-6 w-6}`} />
+                <Image
+                  width={30}
+                  height={30}
+                  src={item.icon}
+                  alt="arrow"
+                  className={`h-6 w-6}`}
+                />
               </span>
             </button>
           </Link>

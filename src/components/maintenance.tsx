@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { Home } from "lucide-react";
+import Image from "next/image";
 
 const Maintenance: React.FC = () => {
   return (
@@ -16,7 +17,9 @@ const Maintenance: React.FC = () => {
             {/* Logo Section */}
             <div className="mb-6 flex justify-center">
               <div className="inline-flex rounded-full bg-teal-50 p-4">
-                <img
+                <Image
+                  height={64}
+                  width={64}
                   src="/assets/images/mikaelsonlogo.png"
                   alt="Mikaelson Initiative"
                   className="h-16 w-auto drop-shadow-md"

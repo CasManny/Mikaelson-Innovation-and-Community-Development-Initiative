@@ -1,15 +1,12 @@
 "use client";
-import React, { useState, useMemo } from "react";
 import {
-  Users,
-  Globe,
-  GraduationCap,
-  Rocket,
-  Star,
-  TrendingUp,
   Book,
+  Globe,
+  TrendingUp,
+  Users
 } from "lucide-react";
 import Link from "next/link";
+import React, { useMemo, useState } from "react";
 
 type TopMember = {
   name: string;
@@ -37,11 +34,6 @@ type RegionGroup = {
 };
 
 const formatNumber = (num: number) => num.toLocaleString();
-
-const CommunityChapters: React.FC = () => {
-  const [selectedRegionKey, setSelectedRegionKey] = useState<string | null>(
-    null
-  );
 
   // Chapter data
   const communityChapters: Chapter[] = [
@@ -74,6 +66,12 @@ const CommunityChapters: React.FC = () => {
     },
     // ... include the rest of your chapters here
   ];
+const CommunityChapters: React.FC = () => {
+  const [selectedRegionKey, setSelectedRegionKey] = useState<string | null>(
+    null
+  );
+
+
 
   // Compute total members
   const totalCommunityMembers = useMemo(() => {
@@ -81,7 +79,7 @@ const CommunityChapters: React.FC = () => {
       (total, chapter) => total + chapter.memberCount,
       0
     );
-  }, [communityChapters]);
+  }, []);
 
   // Example region list grouping chapters by country/region
   const regionList: RegionGroup[] = [

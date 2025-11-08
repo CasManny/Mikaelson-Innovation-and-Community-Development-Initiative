@@ -23,27 +23,20 @@ const options: Option[] = [
     color: "#20c9c0",
     buttonLabel: "Give Today",
   },
-  {
-    title: "Become a Partner",
-    description:
-      "Join our network of corporate partners committed to fostering talent and driving innovation in Africa. Let's build the future together.",
-    color: "#1f2937",
-    buttonLabel: "Contact Us",
-  },
+  // {
+  //   title: "Become a Partner",
+  //   description:
+  //     "Join our network of corporate partners committed to fostering talent and driving innovation in Africa. Let's build the future together.",
+  //   color: "#1f2937",
+  //   buttonLabel: "Contact Us",
+  // },
 ];
 
 export const SponsorshipOptions: React.FC = () => {
   return (
     <section className="sponsorship-options" style={{ padding: "4rem 1rem" }}>
       <div style={{ width: "90%", maxWidth: 1200, margin: "0 auto" }}>
-        <h2
-          style={{
-            textAlign: "center",
-            fontSize: "2.5rem",
-            fontWeight: 700,
-            marginBottom: "3rem",
-          }}
-        >
+        <h2 className="text-2xl md:text-[3rem] font-bold mb-6 lg:mb-8 text-center">
           Ways to Give
         </h2>
         <div
@@ -66,22 +59,24 @@ export const SponsorshipOptions: React.FC = () => {
               }}
             >
               <h3
+                className="text-xl font-semibold "
                 style={{
-                  fontSize: "1.8rem",
-                  fontWeight: 700,
                   color: opt.color,
                 }}
               >
                 {opt.title}
               </h3>
-              <p style={{ margin: "1rem 0", color: "#333" }}>
+              <p
+                className="text-sm md:text-base text-left md:text-center"
+                style={{ margin: "1rem 0", color: "#333" }}
+              >
                 {opt.description}
               </p>
               <button
+                className="py-3 text-sm md:text-base px-4 md:py-[0.8rem] md:px-[1.5rem]"
                 style={{
                   background: opt.color,
                   color: "white",
-                  padding: "0.8rem 1.5rem",
                   borderRadius: "2rem",
                   border: "none",
                   fontWeight: 600,
@@ -92,6 +87,43 @@ export const SponsorshipOptions: React.FC = () => {
               </button>
             </div>
           ))}
+          <div
+            className="sponsorship-card"
+            style={{
+              background: "white",
+              borderRadius: 16,
+              padding: "2rem",
+              boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
+              textAlign: "center",
+            }}
+          >
+            <h3 className="text-xl font-semibold" style={{ color: "#1f2937" }}>
+              Become a Partner
+            </h3>
+
+            <p
+              className="text-sm md:text-base text-left md:text-center"
+              style={{ margin: "1rem 0", color: "#333" }}
+            >
+              Join our network of corporate partners committed to fostering
+              talent and driving innovation in Africa. Let's build the future
+              together.
+            </p>
+
+            <a
+              href="mailto:community@mikaelsoninitiative.org"
+              className="py-3 text-sm md:text-base px-4 md:py-[0.8rem] md:px-[1.5rem] inline-block font-semibold"
+              style={{
+                background: "#1f2937",
+                color: "white",
+                borderRadius: "2rem",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}
+            >
+              Contact Us
+            </a>
+          </div>
         </div>
       </div>
     </section>

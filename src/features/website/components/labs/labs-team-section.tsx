@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 type TeamMember = {
@@ -54,7 +55,9 @@ const LabsTeamSection: React.FC = () => {
             >
               {/* Member Image */}
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-indigo-100 shadow-sm mb-6">
-                <img
+                <Image
+                  width={50}
+                  height={50}
                   src={member.image}
                   alt={member.name}
                   className="w-full h-full object-cover"
