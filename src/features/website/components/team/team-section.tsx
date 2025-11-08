@@ -61,7 +61,7 @@ const TeamSection: React.FC = () => {
               <button
                 key={key}
                 onClick={() => setActiveFilter(key as FilterType)}
-                className={`rounded-lg border-2 border-cyan-400 px-4 py-2 text-sm font-medium transition-colors sm:text-base ${
+                className={`rounded-lg border-2 border-cyan-400 px-4 py-2 text-sm font-medium transition-colors sm:text-base cursor-pointer ${
                   activeFilter === key
                     ? "bg-cyan-400 text-white"
                     : "text-cyan-400 hover:bg-cyan-50"

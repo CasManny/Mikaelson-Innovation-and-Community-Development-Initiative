@@ -54,7 +54,7 @@ const LeftSidebar = () => {
     return (
         <aside className="hidden md:flex md:flex-col md:col-span-2">
             <div className="bg-white shadow p-6 mb-6 border flex flex-col justify-center items-center">
-                <h3 className="font-semibold">Quick Actions</h3>
+                <h3 className="font-semibold mb-2">Quick Actions</h3>
                 {user.LoggedIn ? (
                     <button className="bg-teal-400 text-white p-4 rounded-lg cursor-pointer w-full">Share Progress</button>
                 ) : (
@@ -62,7 +62,7 @@ const LeftSidebar = () => {
                 )}
             </div>
             <div className="bg-white shadow p-6 mb-6 border flex flex-col justify-center items-center">
-                <h3 className="font-semibold">Active Challenges</h3>
+                <h3 className="font-semibold mb-2">Active Challenges</h3>
                 <div className="flex flex-col gap-2">
                     {challenges.map((challenge) => (
                         <button key={challenge.id} className="flex text-sm justify-between bg-white border border-[#e5e7eb] items-center rounded-xl p-2 w-full cursor-pointer hover:bg-green-100 hover:border-green-500">
@@ -73,7 +73,7 @@ const LeftSidebar = () => {
                 </div>
             </div>
             <div className="bg-white shadow p-6 mb-6 border flex flex-col justify-center items-center">
-                <h3 className="font-semibold">Trending</h3>
+                <h3 className="font-semibold mb-2">Trending</h3>
                 <GetPostsTags />
             </div>
         </aside>

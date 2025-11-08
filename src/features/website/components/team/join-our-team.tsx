@@ -44,18 +44,7 @@ const JoinTeam: React.FC = () => {
         <button
           type="button"
           onClick={() => router.push("/volunteer")}
-          style={{
-            background: "rgb(59,130,246)",
-            color: "white",
-            fontSize: "1.125rem",
-            fontWeight: 600,
-            padding: "1rem 2rem",
-            border: "none",
-            borderRadius: "0.75rem",
-            cursor: "pointer",
-            transition: "0.3s",
-            boxShadow: "0 4px 12px rgba(59,130,246,0.3)",
-          }}
+          className="bg-teal-400 text-white text-lg font-semibold py-4 px-8 border-none cursor-pointer shadow rounded-md"
         >
           Join Us Today
         </button>

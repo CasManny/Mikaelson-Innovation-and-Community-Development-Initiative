@@ -1,4 +1,5 @@
 'use client'
+import { Heart, MessageCircle, Redo2, Repeat } from "lucide-react";
 import { useEffect, useState } from "react"
 
 interface UserPostCount {
@@ -351,7 +352,7 @@ export const GetContributors = () => {
         <div className="w-full flex flex-col gap-4">
             {topContributions.map((contributor, index) => (
                 <div className="flex flex-row gap-4" key={index}>
-                    <div className="bg-teal-400 text-white p-2 rounded-full aspect-square font-semibold flex items-center justify-center">
+                    <div className="bg-gradient-to-br from-teal-500 to-blue-600 text-white p-2 rounded-full aspect-square w-10 h-10 font-semibold flex items-center justify-center">
                         {contributor.userAvatar}
                     </div>
                     <div key={contributor.userId} className="flex flex-col">
@@ -365,23 +366,35 @@ export const GetContributors = () => {
 };
 
 export const GettAllPosts = () => {
+
     return (
         <div className="flex flex-col gap-8">
             {posts.map((post) => (
                 <div key={post.id} className=" bg-white rounded-2xl p-6 border border-[#f3f4f6] shadow-md transition-all">
                     <div className="postheader flex flex-row justify-between">
                         <div className="flex flex-row gap-2 justify-center items-center">
-                            <span className="text-white flex items-center justify-center p-2 bg-teal-400 rounded-full w-fit">{post.userAvatar}</span>
-                            <span>{post.userName}</span>
+                            <span className="text-white flex items-center justify-center p-2 bg-gradient-to-br from-teal-500 to-blue-600 rounded-full w-fit">{post.userAvatar}</span>
+                            <span className="font-semibold text-sm">{post.userName}</span>
                         </div>
-                        <div className="bg-black/5 p-2 flex justify-center items-center rounded-xl">
+                        <div className="bg-black/5 p-2 flex justify-center items-center rounded-xl border">
                             <span>{post.challengeTitle}</span>
                         </div>
                     </div>
-                    <div className="post-progress bg-[#f8fafc] p-4 rounded-xl my-4 border">
+                    <div className="post-progress bg-[#f8fafc] p-2 rounded-xl my-4 border">
                         <div className="flex flex-row justify-between items-center">
                             <div>Day <span>{post.progress.currentDay} out of {post.progress.totalDays}</span></div>
-                            <div className="border-2  rounded-full p-4 w-12 h-12 flex justify-center items-center">{post.progress.percentage}%</div>
+                            {/* Make boder show the progress of the task */}
+
+                            <div
+                                className="rounded-full p-1 w-12 h-12 flex justify-center items-center"
+                                style={{
+                                    background: `conic-gradient(#14b8a6 ${post.progress.percentage * 3.6}deg, #e5e7eb 0deg)`,
+                                }}
+                            >
+                                <div className="bg-white rounded-full w-full h-full flex justify-center items-center text-sm">
+                                    {post.progress.percentage}%
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="post-text space-y-2">
@@ -394,7 +407,25 @@ export const GettAllPosts = () => {
                             </div>
                         ))}
                     </div>
-                    <div className="post-reactions"></div>
+                    <hr className="my-4"/>
+                    <div className="post-reactions flex items-center gap-2">
+                        <div className="likes hover:text-red-600 hover:bg-gray-200 flex items-center justify-center p-2 rounded-lg cursor-pointer gap-2" title="likes">
+                            <Heart />
+                            <span>{post.likes}</span>
+                        </div>
+                        <div className="comments hover:text-blue-600 hover:bg-gray-200 flex items-center justify-center p-2 rounded-lg cursor-pointer gap-2" title="comments">
+                            <MessageCircle />
+                            <span>{post.comments}</span>
+                        </div>
+                        <div className="reposts hover:text-green-600 hover:bg-gray-200 flex items-center justify-center p-2 rounded-lg cursor-pointer gap-2" title="reposts">
+                            <Repeat />
+                            <span>{post.reposts}</span>
+                        </div>
+                        <div className="shares hover:text-red-600 hover:bg-gray-200 flex items-center justify-center p-2 rounded-lg cursor-pointer gap-2" title="shares">
+                            <Redo2 />
+                            <span>{post.shares}</span>
+                        </div>
+                    </div>
                 </div>
             ))}
         </div>
