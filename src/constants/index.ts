@@ -118,7 +118,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     department: "TECH",
     role: "Frontend Developer",
     img: "/assets/images/Ariyo-Aresa.jpg",
-    bio: "I'm Ariyo Olatunji-Aresa Aresa, a Frontend engineer with about 4 years of experience who has worked on several projects across several industries. I'm also a 400 level engineering student",
+    bio: "I'm Ariyo Olatunji-Aresa Aresa, a Frontend engineer with about 4 years of experience who has worked on several projects across several industries. I'm also an engineering student",
   },
   {
     name: "Mercy kalu",
