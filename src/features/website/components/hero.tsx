@@ -1,7 +1,6 @@
 "use client";
-import React from "react";
 import { motion } from "motion/react";
-import Link from "next/link";
+import React from "react";
 
 const HomeHero: React.FC = () => {
   return (
@@ -12,8 +11,8 @@ const HomeHero: React.FC = () => {
       viewport={{ once: true, amount: 0.2 }}
       className="lg:px-8 py-5"
     >
-      <div className="mx-auto max-w-[1200px] rounded-3xl bg-[rgba(92,225,230,0.5)] p-5 text-left md:p-8 min-h-[550px]">
-        <div className="relative mt-10 md:mt-20 mx-auto flex-col flex max-w-[1400px] lg:flex-row items-stretch justify-between gap-10">
+      <div className="mx-auto max-w-[2000px] rounded-3xl bg-[rgba(92,225,230,0.5)] p-5 text-left md:p-8 min-h-[550px]">
+        <div className="relative mt-10 md:mt-20 mx-auto flex-col flex max-w-[1500px] lg:flex-row items-stretch justify-between gap-10">
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -60 }}
@@ -33,31 +32,6 @@ const HomeHero: React.FC = () => {
               from the inside out. We&apos;re starting with students. We&apos;re
               staying with purpose.
             </p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.6 }}
-              viewport={{ once: true }}
-              className="mt-[2.4rem] flex items-center justify-center gap-4"
-            >
-              <Link href='/community' className="bg-brand-black px-8 py-3 text-lg font-bold text-[#FFFFFF] rounded-[1.2rem] flex flex-row items-center">
-                <span>Join our community</span>
-                <svg
-                className="ml-2 h-4 w-4"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M7 17L17 7M17 7H7M17 7V17"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              </Link>
-            </motion.div>
           </motion.div>
 
           {/* Video */}

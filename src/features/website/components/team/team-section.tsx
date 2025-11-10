@@ -7,6 +7,7 @@ import {
   DialogTitle,
   DialogTrigger
 } from "@/components/ui/dialog";
+import ReactCountryFlag from "react-country-flag";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { FILTERS, FilterType, TEAM_MEMBERS, TeamMember } from "@/constants";
 import { motion } from "motion/react";
@@ -121,6 +122,14 @@ const TeamSection: React.FC = () => {
                     <div className="absolute bottom-0 left-0 right-0 m-1 rounded bg-white/90 p-1 text-center">
                       <h4 className="text-base font-semibold  text-gray-700 sm:text-lg">
                         {member.name}
+
+                        <ReactCountryFlag
+                          countryCode={member.country}
+                          svg
+                          style={{ width: "1.5em", height: "1.5em" }}
+                          title={member.country}
+                          className="rotate-2 ml-2"
+                        />
                       </h4>
                       <p className="text-sm text-gray-500 sm:text-base">
                         {member.role}

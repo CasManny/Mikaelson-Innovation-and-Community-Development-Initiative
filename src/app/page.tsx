@@ -7,7 +7,7 @@ import MediaStories from "@/features/website/components/media-stories";
 
 export default function Home() {
   return (
-    <main className="px-5">
+    <main className="bg-[#ffffff] px-5 lg:px-0">
       <HomeHero />
       <EcosystemSection />
       <AnimatedSection
