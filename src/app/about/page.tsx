@@ -3,6 +3,7 @@ import { AboutOrganization } from "@/features/website/components/about/about-org
 import { ImpactStats } from "@/features/website/components/about/impact-stats";
 import { JoinSection } from "@/features/website/components/about/join-section";
 import { OurStory } from "@/features/website/components/about/our-story";
+import SdgSection from "@/features/website/components/about/sdg-section";
 import { TeamSection } from "@/features/website/components/about/team-section";
 import { WhatWeDo } from "@/features/website/components/about/what-we-do";
 import type { Metadata } from "next";
@@ -36,8 +37,9 @@ export const metadata: Metadata = {
 
 const AboutPage = () => {
   return (
-    <main className="px-6 py-10">
+    <main className="">
       <AboutHeader />
+      <SdgSection />
       <AboutOrganization />
       <OurStory />
       <WhatWeDo />

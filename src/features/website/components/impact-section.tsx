@@ -108,11 +108,11 @@ export default function ImpactSection() {
         </div>
 
         {/* Items */}
-        <div className="impact-grid mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="impact-grid mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {itemsToShow.map((item) => (
             <div
               key={item.label}
-              className="impact-item rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg"
+              className="impact-item rounded-2xl border border-l-[#20c9c0] border-l-4 border-gray-200 bg-white p-20 text-center shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg"
             >
               <div className="impact-icon-wrapper hidden mx-auto mb-3 h-12 w-12 lg:h-20 lg:w-20 items-center justify-center rounded-full bg-gray-100 text-xl">
                 <span className="impact-icon text-2xl lg:text-5xl" aria-hidden>
@@ -120,22 +120,24 @@ export default function ImpactSection() {
                 </span>
               </div>
               <div className="impact-content">
-                <h3 className="impact-number text-3xl font-extrabold text-gray-900">
+                <h3 className="impact-number text-3xl lg:text-[40px] font-extrabold text-gray-900">
                   <CountUp value={item.number} />
                 </h3>
-                <p className="mt-1 text-sm text-gray-700">{item.label}</p>
+                <p className="mt-1 text-sm text-gray-700 md:text-[17.6px]">
+                  {item.label}
+                </p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Quote */}
-        <blockquote className="mx-auto mt-10 max-w-3xl rounded-lg border border-l-brand-bg-color border-l-8 border-gray-200 bg-white p-6 italic text-gray-800 text-lg">
-          <p>
-            The Initiative gave me the structure I needed to finally take
-            my life seriously.
+        <blockquote className="mx-auto mt-10 max-w-3xl rounded-lg border border-l-[#20c9c0] border-l-8 border-gray-200 bg-white p-6 italic text-gray-800 text-lg">
+          <p className="md:text-[25.6px]">
+            The Initiative gave me the structure I needed to finally take my
+            life seriously.
           </p>
-          <footer className="mt-2 not-italic text-sm text-gray-600">
+          <footer className="mt-2 not-italic text-sm text-right text-gray-600  lg:text-[17.6px]">
             — A Student, Wesley University
           </footer>
         </blockquote>
