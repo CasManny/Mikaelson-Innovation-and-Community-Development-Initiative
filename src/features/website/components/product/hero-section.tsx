@@ -18,7 +18,7 @@ export const ProductHero = () => {
           generation of community-driven applications.
         </p>
 
-        <div className="mt-8 flex justify-center gap-4">
+        <div className="mt-8 flex justify-center gap-5">
           <Button asChild>
             <Link href="/sign-up">Get Started</Link>
           </Button>
